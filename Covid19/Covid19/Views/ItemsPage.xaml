@@ -29,7 +29,6 @@
                     <x:String>Third Item</x:String>
                     <x:String>Fourth Item</x:String>
                     <x:String>Fifth Item</x:String>
-                   
                 </x:Array>
             </d:ListView.ItemsSource>
             <ListView.ItemTemplate>

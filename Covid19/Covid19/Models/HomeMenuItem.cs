@@ -7,7 +7,8 @@ namespace Covid19.Models
     public enum MenuItemType
     {
         Browse,
-        About
+        About,
+        Home
     }
     public class HomeMenuItem
     {

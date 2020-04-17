@@ -19,9 +19,10 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:ItemsPage />
+                <views:HomePage />
             </x:Arguments>
         </NavigationPage>
+       
     </MasterDetailPage.Detail>
     
 </MasterDetailPage>

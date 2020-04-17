@@ -6,8 +6,16 @@
              mc:Ignorable="d"
              x:Class="Covid19.Views.MenuPage"
              Title="Menu">
-             
+
     <StackLayout VerticalOptions="FillAndExpand">
+        <Grid Padding="10,0,10,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="80*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" x:Name="ProfilePhoto" Source="https://www.google.com/logos/doodles/2020/thank-you-food-service-workers-6753651837108761-law.gif" />
+            <Label Grid.Column="1" HorizontalTextAlignment="Start" FontSize="20" VerticalTextAlignment="Center" x:Name="profilename" Text="Debabrata Ghosh"></Label>
+        </Grid>
         <ListView x:Name="ListViewMenu"
                     HasUnevenRows="True">
             <d:ListView.ItemsSource>
