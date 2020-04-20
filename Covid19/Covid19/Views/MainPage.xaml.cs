@@ -33,6 +33,9 @@ namespace Covid19.Views
                     case (int)MenuItemType.Home:
                         MenuPages.Add(id, new NavigationPage(new HomePage()));
                         break;
+                    case (int)MenuItemType.CurrentCovid19Status:
+                        MenuPages.Add(id, new NavigationPage(new CurrentConditionCovid19()));
+                        break;
                     case (int)MenuItemType.Browse:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;

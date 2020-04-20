@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19.Android", "Covid19\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19.iOS", "Covid19\Covid19.iOS\Covid19.iOS.csproj", "{79AEC24A-6A55-40B3-A1AD-66D8BB710E4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19", "Covid19\Covid19\Covid19.csproj", "{8B7F8EA3-C63A-4282-9887-F5BB897E2DEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Covid19", "Covid19\Covid19\Covid19.csproj", "{8B7F8EA3-C63A-4282-9887-F5BB897E2DEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

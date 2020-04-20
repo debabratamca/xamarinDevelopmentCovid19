@@ -8,7 +8,8 @@ namespace Covid19.Models
     {
         Browse,
         About,
-        Home
+        Home,
+        CurrentCovid19Status
     }
     public class HomeMenuItem
     {

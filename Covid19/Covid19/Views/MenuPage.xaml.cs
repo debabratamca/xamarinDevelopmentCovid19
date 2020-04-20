@@ -1,4 +1,6 @@
-﻿using Covid19.Models;
+﻿using Android.Widget;
+using Covid19.Controller;
+using Covid19.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +16,7 @@ namespace Covid19.Views
     {
         MainPage RootPage { get => Application.Current.MainPage as MainPage; }
         List<HomeMenuItem> menuItems;
+        ConnectivityTest connectivityTest = null;
         public MenuPage()
         {
             InitializeComponent();
@@ -21,21 +24,32 @@ namespace Covid19.Views
             menuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.Home, Title="Home" },
+                new HomeMenuItem {Id = MenuItemType.CurrentCovid19Status, Title="CurrentStatus" },
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" }
             };
-
-            ListViewMenu.ItemsSource = menuItems;
-
-            ListViewMenu.SelectedItem = menuItems[0];
-            ListViewMenu.ItemSelected += async (sender, e) =>
+            connectivityTest = new ConnectivityTest();
+            if (connectivityTest.CheckInternet())
             {
-                if (e.SelectedItem == null)
-                    return;
+               // Toast.MakeText(Android.App.Application.Context,"Yea", ToastLength.Long).Show();
+                ListViewMenu.ItemsSource = menuItems;
 
-                var id = (int)((HomeMenuItem)e.SelectedItem).Id;
-                await RootPage.NavigateFromMenu(id);
-            };
+                ListViewMenu.SelectedItem = menuItems[0];
+                ListViewMenu.ItemSelected += async (sender, e) =>
+                {
+                    if (e.SelectedItem == null)
+                        return;
+
+                    var id = (int)((HomeMenuItem)e.SelectedItem).Id;
+                    await RootPage.NavigateFromMenu(id);
+                };
+            }
+            else
+            {
+                string no = "No Internet";
+                Toast.MakeText(Android.App.Application.Context, no, ToastLength.Long).Show();
+            }
+            
         }
     }
 }

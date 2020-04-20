@@ -10,6 +10,8 @@ using Xamarin.Forms.Xaml;
 using Covid19.Models;
 using Covid19.Views;
 using Covid19.ViewModels;
+using Covid19.Controller;
+using Android.Widget;
 
 namespace Covid19.Views
 {
@@ -19,12 +21,18 @@ namespace Covid19.Views
     public partial class ItemsPage : ContentPage
     {
         ItemsViewModel viewModel;
-
+        ConnectivityTest connectivityTest = null;
         public ItemsPage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ItemsViewModel();
+            connectivityTest = new ConnectivityTest();
+            if (connectivityTest.CheckInternet())
+            {
+                Toast.MakeText(Android.App.Application.Context, "Internet connection Available", ToastLength.Long).Show();
+                BindingContext = viewModel = new ItemsViewModel();
+            }
+            
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
